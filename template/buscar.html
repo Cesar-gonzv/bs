@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Orden</title>
+</head>
+<body>
+    <h1>Buscar Orden por Nombre del Cliente</h1>
+    <form method="POST">
+        <input type="text" name="nombre" required placeholder="Nombre del cliente">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if datos %}
+        <h2>Resultados para "{{ nombre }}"</h2>
+        <ul>
+        {% for orden in datos %}
+            <li>
+                Orden N°{{ orden[0] }} - {{ orden[4] }} ({{ orden[5] }})
+                <a href="/comprobante/{{ orden[0] }}" target="_blank">[Descargar Comprobante]</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% elif datos == [] %}
+        <p>No se encontraron órdenes para este cliente.</p>
+    {% endif %}
+</body>
+</html>
