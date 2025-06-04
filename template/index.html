@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Orden de Servicio</title>
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <h1>Registrar Orden de Servicio</h1>
+    <form method="POST" action="/guardar">
+        <label>Nombre del Cliente:</label><br>
+        <input type="text" name="nombre" required><br><br>
+
+        <label>Correo:</label><br>
+        <input type="email" name="correo" required><br><br>
+
+        <label>Teléfono:</label><br>
+        <input type="text" name="telefono" required><br><br>
+
+        <label>Descripción del Servicio:</label><br>
+        <textarea name="descripcion" required></textarea><br><br>
+
+        <label>Fecha del Servicio:</label><br>
+        <input type="date" name="fecha" required><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>
